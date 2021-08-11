@@ -2,8 +2,8 @@ import requests
 import json
 import tkinter as tk #gui
 
+API_KEY = open("kluczAPI.txt").read()
 def pokazTemp(miasto):
-    API_KEY = 'top secret'
     wynikZapytania = \
         requests.get('http://api.openweathermap.org/data/2.5/weather?q='+miasto+'&appid='+API_KEY)
     #print(wynikZapytania.text)
