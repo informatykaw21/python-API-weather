@@ -3,7 +3,7 @@ import json
 import tkinter as tk #gui
 
 def pokazTemp(miasto):
-    API_KEY = 'd92d36dd025f13aa432c9c7450764713'
+    API_KEY = 'top secret'
     wynikZapytania = \
         requests.get('http://api.openweathermap.org/data/2.5/weather?q='+miasto+'&appid='+API_KEY)
     #print(wynikZapytania.text)
