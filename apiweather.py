@@ -4,6 +4,7 @@ import json
 import tkinter as tk #gui
 
 API_KEY = open("kluczAPI.txt").read()
+
 def pokazTemp(miasto):
     wynikZapytania = \
         requests.get('http://api.openweathermap.org/data/2.5/weather?q='+miasto+'&appid='+API_KEY)
@@ -31,6 +32,8 @@ class aplikacja (tk.Frame):
         self.labelOpis = tk.Label(self)
         self.labelOpis.grid(row=1, column=1)
         self.labelOpis['text']='Wpisz miasto'
+        self.labelOpis['font'] = 'Helvetica 14 bold'
+        
     
     
     def pokazTemp(self):
@@ -39,8 +42,9 @@ class aplikacja (tk.Frame):
         self.labelOdp['text']= str(pokazTemp(miasto)) + " °C"
 
 
-
 root =tk.Tk()
+root.minsize(300,100)
+root.maxsize(300,100)
 win = aplikacja(root)
 win.mainloop()
 
